@@ -4,6 +4,11 @@ import 'package:wether_app/pages/home_page/widgets/custom_app_bar.dart';
 import 'package:wether_app/pages/home_page/widgets/location_wiev.dart';
 import 'package:wether_app/styles/app_colors.dart';
 
+import 'widgets/hourly_weather.dart';
+import 'widgets/schedule_of_week.dart';
+import 'widgets/weather_celseus.dart';
+import 'widgets/weather_info.dart';
+
 class HomePages extends StatefulWidget {
   const HomePages({super.key});
 
@@ -24,10 +29,14 @@ class _HomePagesState extends State<HomePages> {
           ),
         ),
         child: SafeArea(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               CustomAppBar(),
               LocationView(),
+              WeatherCelsius(),
+              WeatherInfo(),
+              ScheduleOfWeek(),
+              HourlyWeather(),
             ],
           ),
         ),

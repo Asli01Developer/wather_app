@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:wether_app/styles/app_colors.dart';
+import 'package:wether_app/utils/time_exetsions.dart';
 
 class LocationView extends StatefulWidget {
   const LocationView({super.key});
@@ -12,7 +13,8 @@ class _LocationViewState extends State<LocationView> {
   @override
   Widget build(BuildContext context) => Padding(
         padding: EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Tashkent, Uzbekistan",
@@ -20,7 +22,14 @@ class _LocationViewState extends State<LocationView> {
                 fontSize: 28,
                 fontWeight: FontWeight.w500,
               ),
-            ),Text("Tue, Jan 30",style: TextStyle(fontSize: 11,color: AppColors.grayText),)
+            ),
+            Text(
+              DateTime.now().weekMonthDay,
+              style: TextStyle(
+                fontSize: 11,
+                color: AppColors.grayText,
+              ),
+            )
           ],
         ),
       );
